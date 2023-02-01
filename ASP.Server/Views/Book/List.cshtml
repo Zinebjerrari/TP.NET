@@ -1,0 +1,71 @@
+﻿@using ASP.Server.Model
+@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .listeBooks table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .listeBooks th,
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    .listeBooks th {
+        background-color: #dddddd;
+    }
+</style>
+<div class="listeBooks">
+    <h1>List of books</h1>
+    <!-- la liste des genres est dans la variable Model qui est typé en ligne 3, elle correspond à la variable xxx dans View(xxx) du controller -->
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Author</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Content</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Modify</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Author</td>
+                    <td>@book.Name</td>
+                    <td>@book.Price</td>
+                    <td>@book.Content</td>
+                    <td>
+                        <ul>
+                            @foreach (var genre in book.Genres)
+                            {
+                                <li>@genre.Name</li>
+                            }
+                        </ul>
+                    </td>
+                    <td>
+                        <form asp-controller="Book" asp-action="Delete" method="post">
+                            <input type="hidden" asp-for="@book.Id" name="id">
+                            <input type="submit" value="Delete" />
+                        </form>
+                    </td>
+                    <td>
+                        <form asp-controller="Book" asp-action="Modify" method="post">
+                            <input type="hidden" asp-for="@book.Id" name="idtomodify">
+                            <input type="submit" value="Modify" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
