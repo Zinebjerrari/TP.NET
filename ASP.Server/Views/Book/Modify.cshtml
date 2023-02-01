@@ -82,7 +82,6 @@
     <p style="color: red ; font-weight: bold;">N'oubliez pas de sélectionner les genres (CTRL + clic).</p>
 <div class="input-group">
         <label asp-for="Genres"></label>
-        <!--Si la page rend une erreur a cette ligne, c'est que vous n'avez pas envoyé la liste des genres dans le Controller !!! ! -->
         <select asp-for="Genres" asp-items="@(new SelectList(Model.AllGenres,"Id","Name"))">
         </select>
     </div>
