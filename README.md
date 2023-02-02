@@ -1,5 +1,41 @@
 # TP .NET
 
+##Groupe de travail:
+- El Mehdi CHEIKH
+- Zineb JERRARI
+- Salah Eddine El Assil
+
+##Rendu Réalisé:
+#Partie ASP:
+![image](https://user-images.githubusercontent.com/101091885/216336543-03483629-ac2b-4576-9f6f-dfba73915b8f.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # But
 Construire un web service avec son client Windows pour gerer et consulter une bibliothèque de livres
 # A rendre
@@ -200,5 +236,3 @@ Vous pouvez sinon faire les requêtes à la main grâce à :
 
 - HttpClient ([System.Net.Http](https://docs.microsoft.com/en-us/dotnet/api/system.net.http?view=net-5.0))
 - Restsharp (<https://www.nuget.org/packages/RestClient.Net/>)
-
-
