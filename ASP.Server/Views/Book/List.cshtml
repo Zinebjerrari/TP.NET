@@ -20,6 +20,12 @@
     .listeBooks th {
         background-color: #dddddd;
     }
+    .txt {
+       overflow: auto; resize: both; border: 1px solid black;
+        width: 359px;
+        height: 72px;
+    }
+
 </style>
 <div class="listeBooks">
     <h1>List of books</h1>
@@ -42,7 +48,23 @@
                     <td>@book.Author</td>
                     <td>@book.Name</td>
                     <td>@book.Price</td>
-                    <td>@book.Content</td>
+                    <td>
+                        <div class="txt">
+  @if (!string.IsNullOrEmpty(book.Content))
+  {
+    string[] words = book.Content.Split(' ');
+    if (words.Length > 20)
+    {   
+      string shortenedContent = string.Join(" ", words.Take(20)) + "...";
+      @shortenedContent
+    }
+    else
+    {
+      @book.Content
+    }
+  }
+</div>
+                    </td>
                     <td>
                         <ul>
                             @foreach (var genre in book.Genres)

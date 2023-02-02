@@ -5,12 +5,53 @@
     ViewData["Title"] = "Liste Genre";
 }
 
-<div class="listeGenres">
-    <h1>Liste des Genres:</h1>
-    <!-- la liste des genres est dans la variable Model qui est typé en ligne 3, elle correspond à la variable xxx dans View(xxx) du controller -->
-    @foreach (var genre in Model)
-    {
+<style>
+    .listeGenres table {
+        width: 100%;
+        border-collapse: collapse;
     }
-</div>
 
+    .listeGenres th,
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
 
+    .listeGenres th {
+        background-color: #dddddd;
+    }
+</style>
+
+    <div class="listeGenres">
+        <h1>List of genres</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Modify</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var genre in Model)
+            {
+                <tr>
+                    <td> @genre.Name </td>
+                    <td>
+                        <form asp-controller="Genre" asp-action="Delete" method="post">
+                            <input type="hidden" asp-for="@genre.Id" name="id">
+                            <input type="submit" value="Delete" style="width: 100%;" />
+                        </form>
+                    </td>
+                    <td>
+                        <form asp-controller="Genre" asp-action="Modify" method="post">
+                            <input type="hidden" asp-for="@genre.Id" name="idtomodify">
+                            <input type="submit" value="Modify" style="width: 100%;" />
+                        </form>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>

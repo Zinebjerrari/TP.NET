@@ -1,0 +1,66 @@
+﻿@using ASP.Server.Controllers
+@model ModifyGenreModel
+@{
+    ViewData["Title"] = "Add a genre";
+}
+<style>
+    form {
+        width: 50%;
+        margin: 0 auto;
+        padding: 30px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .input-group {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 80%;
+        height: 60px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+
+    label {
+        width: 10%;
+        text-align: right;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+
+
+    input[type="submit"] {
+        width: 100%;
+        height: 40px;
+        margin-top: 50px;
+        background-color: #ddd;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+</style>
+
+<h1>Modify genre</h1>
+<form asp-controller="Genre" asp-action="Modify">
+    <input type="hidden" value="@Model.Id" name="idtomodify" />
+    <div class="input-group">
+        <label asp-for="Name">Genre:</label>
+        <input asp-for="Name" value="@Model.Name" />
+    </div>
+    <input type="submit" value="Update" style="width: 100%; margin-top: 50px" />
+</form>

@@ -1,10 +1,68 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center">    <img src="/Images/bibli.png" style="width:100%; height:auto;" />    <h1 class="display-4">Bienvenue à la Bibliothèque Numérique</h1><br /></div>
+<br /><div class="text-center">
+    @{
+        var quote = "Une heure de lecture est le souverain remède contre les dégoûts de la vie. - Montesquieu";
+    }
+    <p class="quote">@quote</p>    @{
+        quote = "Lire est le seul moyen de vivre plusieurs fois. - Pierre Dumayet";
+    }
+    <p class="quote">@quote</p>
 </div>
+<br />
+<br /><div class="row">
+    <div class="col-sm-6 author-of-the-month">
+        <h2>Auteur du mois</h2>        <p>Nous sommes heureux de présenter notre auteur du mois:</p>        <img src="/Images/img2.png" />        <p><U>Biographie:</U></p>        <p>
+            Franz Kafka est né à Prague, alors capitale de la Bohême, qui faisait partie de l'Empire austro-hongrois, d'une famille juive peu religieuse.
+            Son enfance est racontée un peu dans ses œuvres , on sait par exemple que grâce à ses deux œuvres Métamorphose et Lettres au père qu'il craignait son père.
+            Très tôt, il s'intéresse à la littérature (ses premiers écrits ont disparu, sans doute détruits par Kafka lui-même) et aux idées socialistes.
+            Après son baccalauréat, Kafka étudie le droit et entre au service d'une compagnie d'assurances. À côté de son travail, Kafka continue d'écrire.
+            En 1917, il tombe malade et meurt dans un sanatorium près de Vienne, en 1924, à l'âge de 40 ans.
+        </p>        <p><U>Ses oeuvres:</U></p>        <img src="/Images/img3.png" />        <img src="/Images/img4.png" />        <img src="/Images/img5.png" />
+    </div>    <div class="col-sm-6 book-of-the-month">
+        <h2>Livre du mois</h2>        <p>Découvrez notre livre du mois:</p>        <img src="/Images/img1.png" />        <p><U>Résumé:</U></p>        <p>
+            Ce récit nous plonge au cœur du pouvoir russe, où courtisans et oligarques se livrent une guerre de tous les instants.
+            Et où Vadim, devenu le principal spin doctor du régime, transforme un pays entier en un théâtre politique, où il n’est d’autre réalité que l’accomplissement des souhaits du Tsar.
+            Mais Vadim n’est pas un ambitieux comme les autres : entraîné dans les arcanes de plus en plus sombres du système qu’il a contribué à construire, ce poète égaré parmi les loups fera tout pour s’en sortir.
+            De la guerre en Tchétchénie à la crise ukrainienne, en passant par les Jeux olympiques de Sotchi, Le mage du Kremlin est le grand roman de la Russie contemporaine.
+            Dévoilant les dessous de l’ère Poutine, il offre une sublime méditation sur le pouvoir.
+        </p>        <p><U>Auteur:</U></p>        <p>
+            Giuliano da Empoli est un essayiste politique, journaliste et romancier italien et suisse.
+            Il est le président fondateur de Volta, un groupe de réflexion basé à Milan.
+            En 2022, il a publié son premier roman, Le mage du Kremlin, pour lequel il a reçu le Grand Prix du roman de l'Académie française.
+        </p>
+    </div>
+</div>
+<style>
+    .author-of-the-month, .book-of-the-month {
+        border: 1px solid black;
+        padding: 20px;
+        height: fit-content;
+        width: 50%;
+        margin: 20px auto;
+        text-align: center;
+        background-color: linen;
+    }
 
+        .book-of-the-month img {
+            width: 30%;
+            height: 30%;
+        }
 
+        .author-of-the-month img {
+            width: 30%;
+            height: 30%;
+        }
+
+    .quote {
+        font-style: italic;
+        font-size: 22px;
+    }
+
+    .display-4 {
+        font-style: oblique;
+        font-size: 50px;
+    }
+</style>
