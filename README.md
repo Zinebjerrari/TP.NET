@@ -1,38 +1,13 @@
 # TP .NET
 
-##Groupe de travail:
+# Groupe de travail:
 - El Mehdi CHEIKH
 - Zineb JERRARI
 - Salah Eddine El Assil
 
-##Rendu Réalisé:
-#Partie ASP:
+# Rendu réalisé:
+# Partie ASP:
 ![image](https://user-images.githubusercontent.com/101091885/216336543-03483629-ac2b-4576-9f6f-dfba73915b8f.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
