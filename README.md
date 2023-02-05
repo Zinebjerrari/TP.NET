@@ -9,6 +9,25 @@
 # Partie ASP:
 ![image](https://user-images.githubusercontent.com/101091885/216336543-03483629-ac2b-4576-9f6f-dfba73915b8f.png)
 
+On a la possibilité d'ajouter un livre tout en choisissant un ou plusieurs genres:
+![image](https://user-images.githubusercontent.com/99188272/216849928-0e4f821b-4e75-4459-aa8d-0fb666a040a6.png)
+
+![image](https://user-images.githubusercontent.com/99188272/216850019-fea9eec4-0511-447b-ac22-d4181138f3ba.png)
+
+
+
+
+
+![image](https://user-images.githubusercontent.com/99188272/216850038-3fcdc02e-0e2a-4e64-9844-5995b0e99a0b.png)
+
+![image](https://user-images.githubusercontent.com/99188272/216850058-9d15dd75-2074-42a3-8855-8ef7dd904ffc.png)
+
+![image](https://user-images.githubusercontent.com/99188272/216850102-238e360f-ee94-4db7-8fa1-114f3632d0fe.png)
+
+![image](https://user-images.githubusercontent.com/99188272/216850118-30f47a62-a742-4f87-8e95-7fdc7d97acbe.png)
+
+![image](https://user-images.githubusercontent.com/99188272/216850135-b331b010-3ce2-477a-a74f-caa23ac9f141.png)
+
 
 
 # But
