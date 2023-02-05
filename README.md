@@ -28,13 +28,21 @@ On peut ajouter un genre :
 On peut visualiser le genre ajouté avec les genres déjà existants :
 ![image](https://user-images.githubusercontent.com/99188272/216850058-9d15dd75-2074-42a3-8855-8ef7dd904ffc.png)
 
+On peut supprimer un genre :
 ![image](https://user-images.githubusercontent.com/99188272/216850102-238e360f-ee94-4db7-8fa1-114f3632d0fe.png)
 
+On peut modifier un genre :
 ![image](https://user-images.githubusercontent.com/99188272/216850118-30f47a62-a742-4f87-8e95-7fdc7d97acbe.png)
 
+On peut visualiser la modification apportée à ce genre :
 ![image](https://user-images.githubusercontent.com/99188272/216850135-b331b010-3ce2-477a-a74f-caa23ac9f141.png)
 
 
+# Partie WPF:
+  **Partie connexion :
+ On a généré la connexion à partir de Nswagger
+ On a modifié les viewModels, services et les pages.
+ Toutefois la fonction OrderBy n'est pas reconnu pour (Book) or elle est définie et fonctionnelle dans BookController
 
 
 # But
