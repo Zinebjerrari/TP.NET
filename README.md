@@ -22,9 +22,10 @@ On peut modifier un livre :
 ![image](https://user-images.githubusercontent.com/99188272/216850263-20fa75aa-5883-43ec-8a81-049bbf1e9fd0.png)
 
 
-
+On peut ajouter un genre :
 ![image](https://user-images.githubusercontent.com/99188272/216850038-3fcdc02e-0e2a-4e64-9844-5995b0e99a0b.png)
 
+On peut visualiser le genre ajouté avec les genres déjà existants :
 ![image](https://user-images.githubusercontent.com/99188272/216850058-9d15dd75-2074-42a3-8855-8ef7dd904ffc.png)
 
 ![image](https://user-images.githubusercontent.com/99188272/216850102-238e360f-ee94-4db7-8fa1-114f3632d0fe.png)
