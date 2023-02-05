@@ -12,9 +12,14 @@
 On a la possibilité d'ajouter un livre tout en choisissant un ou plusieurs genres:
 ![image](https://user-images.githubusercontent.com/99188272/216849928-0e4f821b-4e75-4459-aa8d-0fb666a040a6.png)
 
+On visualise le livre ajouté parmi les anciens affichés :
 ![image](https://user-images.githubusercontent.com/99188272/216850019-fea9eec4-0511-447b-ac22-d4181138f3ba.png)
 
+On peut supprimer un livre :
+![image](https://user-images.githubusercontent.com/99188272/216850225-a966db89-5917-4437-b93d-43446fc70842.png)
 
+On peut modifier un livre :
+![image](https://user-images.githubusercontent.com/99188272/216850263-20fa75aa-5883-43ec-8a81-049bbf1e9fd0.png)
 
 
 
@@ -27,6 +32,7 @@ On a la possibilité d'ajouter un livre tout en choisissant un ou plusieurs genr
 ![image](https://user-images.githubusercontent.com/99188272/216850118-30f47a62-a742-4f87-8e95-7fdc7d97acbe.png)
 
 ![image](https://user-images.githubusercontent.com/99188272/216850135-b331b010-3ce2-477a-a74f-caa23ac9f141.png)
+
 
 
 
