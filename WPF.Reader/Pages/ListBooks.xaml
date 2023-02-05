@@ -1,4 +1,4 @@
-﻿<Page x:Class="WPF.Reader.Pages.ListBooks"
+<Page x:Class="WPF.Reader.Pages.ListBooks"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,9 +8,27 @@
       xmlns:model="clr-namespace:WPF.Reader.Model"
       d:DataContext="{d:DesignInstance Type=vm:ListBook, d:IsDesignTimeCreatable=True}"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="650" d:DesignWidth="800"
       Title="ListBooks">
     <StackPanel>
+        <Grid Margin="50" Width="700" Height="300">
+            <ListBox ItemsSource="{Binding Books}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Title :"></TextBlock>
+                            <TextBlock Text="{Binding Name}" />
+                            <TextBlock Text="Author :"></TextBlock>
+                            <TextBlock Text="{Binding Author}" />
+                            <Button 
+                                    CommandParameter="{Binding DetailsBook}"
+                                    Content="See details" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
         <!-- 
             A vous de créer la liste avec le bon binding. Une <ListBox> fera l'affaire 
             La propriété ItemsSource doit pointé vers la propiété Books de votre dataContext actuelle 
@@ -24,6 +42,23 @@
             Command="{Binding DataContext.ItemSelectedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}}" 
             CommandParameter="{Binding .}"
         -->
+        <StackPanel Margin="50" Height="200">
+            <TextBlock Text="List des genres dans notre library :" TextAlignment="Center" ></TextBlock>
+            <ListBox >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Height="200" Width="200">
+                            <TextBlock Text="Name : "></TextBlock >
+                            <TextBlock  />
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        <Button Command="{Binding ReadCommand}" CommandParameter="{Binding CurrentBook}" Content="Read Book" Grid.Row="1"/>
+
     </StackPanel>
 </Page>
+
 
