@@ -1,6 +1,6 @@
-﻿using System.ComponentModel;
+using MyNamespace;
+using System.ComponentModel;
 using System.Windows.Input;
-using WPF.Reader.Model;
 
 namespace WPF.Reader.ViewModel
 {
@@ -24,3 +24,4 @@ namespace WPF.Reader.ViewModel
         public InDesignDetailsBook() : base(new Book() /*{ Title = "Test Book" }*/) { }
     }
 }
+
