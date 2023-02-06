@@ -15,7 +15,6 @@ namespace ASP.Server.Model
 
         public string Name { get; set; }
 
-        [JsonIgnore]
         public string Author { get; set; }
         public double Price { get; set; }
 
@@ -36,8 +35,6 @@ namespace ASP.Server.Model
         public int Id { get; set; }
 
         public string Name { get; set; }
-
-        [JsonIgnore]
         public string Author { get; set; }
         public double Price { get; set; }
 

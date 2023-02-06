@@ -1,11 +1,11 @@
 ﻿using MyNamespace;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Windows;
-
-
+using System.Windows.Documents;
 
 namespace WPF.Reader.Service
 {
@@ -33,13 +33,13 @@ namespace WPF.Reader.Service
         };
         public async void UpdateBookList()
         {
-            var books = await new BookClient(_httpClient).GetBookAsync(null);
+            var books = await new BookClient(_httpClient).GetBooksAsync("null",0,10);
 
             Application.Current.Dispatcher.Invoke(() =>
             {
                 Books?.Clear();
 
-                foreach (var book in books.OrderBy(book => book.Id))
+                foreach (var book in books.OrderBy(b => b.Id))
                 {
                     var newbook = new Book()
                     {
@@ -47,7 +47,8 @@ namespace WPF.Reader.Service
                         Price = book.Price,
                         Genres = book.Genres,
                         Id = book.Id,
-                        Name = book.Name
+                        Name = book.Name,
+                        Author = book.Author
                     };
                     Books?.Add(newbook);
                 }

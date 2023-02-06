@@ -44,20 +44,18 @@
         -->
         <StackPanel Margin="50" Height="200">
             <TextBlock Text="List des genres dans notre library :" TextAlignment="Center" ></TextBlock>
-            <ListBox >
+            <ListBox ItemsSource="{Binding Genres}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Height="200" Width="200">
-                            <TextBlock Text="Name : "></TextBlock >
-                            <TextBlock  />
-
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Name : " FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Name}" />
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
-        <Button Command="{Binding ReadCommand}" CommandParameter="{Binding CurrentBook}" Content="Read Book" Grid.Row="1"/>
-
+        <Button Command="{Binding ElementName=ListBook, Path=DataContext.ItemSelectedCommand}" CommandParameter="{Binding .}" Height="30" Width="100" HorizontalAlignment="Left" Content="See details"/>
     </StackPanel>
 </Page>
 

@@ -2,19 +2,35 @@ using MyNamespace;
 using System.ComponentModel;
 using System.Windows.Input;
 
+using System;
+using System.Net.Http;
+using CommunityToolkit.Mvvm.DependencyInjection;
+using WPF.Reader.Service;
+
 namespace WPF.Reader.ViewModel
 {
     public class DetailsBook : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public ICommand ReadCommand { get; init; } = new RelayCommand(x => { /* A vous de définir la commande */ });
+
+        private readonly HttpClient _httpClient = new() { BaseAddress = new Uri("https://127.0.0.1:5001") };
 
         // n'oublier pas faire de faire le binding dans DetailsBook.xaml !!!!
-        public Book CurrentBook { get; init; }
 
-        public DetailsBook(Book book)
+        public Book CurrentBook { get; set; }
+
+        public ICommand ReadCommand { get; init; } = new RelayCommand(book => { Ioc.Default.GetRequiredService<INavigationService>().Navigate<ReadBook>((Book)book); });
+
+        public DetailsBook(Book  book)
         {
-            CurrentBook = book;
+            GetDetailsBook (book.Id);
+        }
+        
+        public async void GetDetailsBook (int id)
+        {
+            var currentBook = await new BookClient (_httpClient).GetBookAsync(id);
+            CurrentBook = currentBook;
+
         }
     }
 

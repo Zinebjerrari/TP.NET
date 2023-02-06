@@ -10,7 +10,7 @@ using ASP.Server.Database;
 using Microsoft.Extensions.DependencyModel;
 namespace ASP.Server.Api
 {
-    [Route("/api/[controller]/[action]")]
+    [Route("/api/[controller]")]
     [ApiController]
     public class BookController : ControllerBase
     {
@@ -34,9 +34,10 @@ namespace ASP.Server.Api
         // - GetBook
         //   - Entrée: Id du livre
         //   - Sortie: Object livre entier
+        [HttpGet("GetBook/{id}")]
         public ActionResult<Book> GetBook(int Id)
         {
-             var test = libraryDbContext.Books.Include(g => g.Genres).Where(g => g.Id == Id).FirstOrDefault();
+            var test = libraryDbContext.Books.Include(g => g.Genres).Where(g => g.Id == Id).FirstOrDefault();
 
             if (test == null)
             {
@@ -48,6 +49,7 @@ namespace ASP.Server.Api
         // - GetGenres
         //   - Entrée: Rien
         //   - Sortie: Liste des genres
+        [HttpGet("GetGenres")]
         public ActionResult<List<Genre>> GetGenres()
         {
             return libraryDbContext.Genre.ToList();
@@ -60,9 +62,19 @@ namespace ASP.Server.Api
         //     la liste retourner doit être compsé des élément entre <offset> et <offset + limit>-
         //     Dans [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] si offset=8 et limit=5, les élément retourner seront : 8, 9, 10, 11, 12
         // Je vous montre comment faire la 1er, a vous de la compléter et de faire les autres !
-        public ActionResult<IEnumerable<BookWithoutContent>> GetBooks(List<int> genres, int offset = 0, int limit = 10)
+
+        [HttpGet("GetBooks/{genres?}/{offset}/{limit}")]
+        public ActionResult<IEnumerable<BookWithoutContent>> GetBooks(string genres = null, int offset = 0, int limit = 10)
         {
-            return libraryDbContext.Books.Include(g => g.Genres).Where(g => genres.Contains(g.Id)).Skip(offset).Take(offset + limit).Select(book => new BookWithoutContent() { Genres = book.Genres, Id = book.Id, Name = book.Name, Price = book.Price }).ToList();
+            if (genres != "null")
+            {
+                var list = genres.Split(",").Select(x => int.Parse(x)).ToList();
+                return libraryDbContext.Books.Include(g => g.Genres).Where(g => list.Contains(g.Id)).Skip(offset).Take(offset + limit).Select(book => new BookWithoutContent() { Genres = book.Genres, Id = book.Id, Name = book.Name, Price = book.Price, Author = book.Author }).ToList();
+            }else
+            {
+                return libraryDbContext.Books.Include(b => b.Genres).Skip(offset).Take(offset+limit).Select(book => new BookWithoutContent() { Genres = book.Genres, Id = book.Id, Name = book.Name, Price = book.Price, Author = book.Author }).ToList(); 
+            }
+           
         }
     }
 }

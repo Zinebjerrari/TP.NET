@@ -1,8 +1,10 @@
 using CommunityToolkit.Mvvm.DependencyInjection;
+using MyNamespace;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Net.Http;
 using System.Windows.Input;
-using WPF.Reader.Model;
 using WPF.Reader.Service;
 
 
@@ -15,7 +17,11 @@ namespace WPF.Reader.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private readonly HttpClient _httpClient = new () { BaseAddress = new Uri("https://127.0.0.1:5001") };
         public ICommand ItemSelectedCommand { get; set; }
+
+
+
 
         // n'oublier pas faire de faire le binding dans ListBook.xaml !!!!
         public ObservableCollection<Genre> Genres => Ioc.Default.GetRequiredService<LibraryService>().Genres;
@@ -27,7 +33,13 @@ namespace WPF.Reader.ViewModel
             ItemSelectedCommand = new RelayCommand(book => { /* the livre devrais etre dans la variable book */ });
             Ioc.Default.GetRequiredService<LibraryService>().UpdateBookList();
             Ioc.Default.GetRequiredService<LibraryService>().UpdateGenreList();
+
+            ItemSelectedCommand = new RelayCommand(book => {
+                Ioc.Default.GetRequiredService<INavigationService>().Navigate<DetailsBook>(book);
+            });
+
         }
+
     }
 }
 
