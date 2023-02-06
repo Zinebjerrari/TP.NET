@@ -39,11 +39,7 @@ On peut visualiser la modification apportée à ce genre :
 
 
 # Partie WPF:
-  **Partie connexion :
- On a généré la connexion à partir de Nswagger
- On a modifié les viewModels, services et les pages.
- Toutefois la fonction OrderBy n'est pas reconnu pour (Book) or elle est définie et fonctionnelle dans BookController
-
+ 
 
 # But
 Construire un web service avec son client Windows pour gerer et consulter une bibliothèque de livres
