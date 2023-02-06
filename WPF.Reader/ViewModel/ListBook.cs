@@ -17,7 +17,7 @@ namespace WPF.Reader.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private readonly HttpClient _httpClient = new () { BaseAddress = new Uri("https://127.0.0.1:5001") };
+        private readonly HttpClient _httpClient = new () { BaseAddress = new Uri("http://127.0.0.1:5000") };
         public ICommand ItemSelectedCommand { get; set; }
 
 
@@ -30,7 +30,7 @@ namespace WPF.Reader.ViewModel
 
         public ListBook()
         {
-            ItemSelectedCommand = new RelayCommand(book => { /* the livre devrais etre dans la variable book */ });
+            //ItemSelectedCommand = new RelayCommand(book => { /* the livre devrais etre dans la variable book */ });
             Ioc.Default.GetRequiredService<LibraryService>().UpdateBookList();
             Ioc.Default.GetRequiredService<LibraryService>().UpdateGenreList();
 

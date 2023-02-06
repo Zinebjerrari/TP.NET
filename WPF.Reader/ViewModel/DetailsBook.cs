@@ -13,7 +13,7 @@ namespace WPF.Reader.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private readonly HttpClient _httpClient = new() { BaseAddress = new Uri("https://127.0.0.1:5001") };
+        private readonly HttpClient _httpClient = new() { BaseAddress = new Uri("http://127.0.0.1:5000") };
 
         // n'oublier pas faire de faire le binding dans DetailsBook.xaml !!!!
 
@@ -29,7 +29,7 @@ namespace WPF.Reader.ViewModel
         public async void GetDetailsBook (int id)
         {
             var currentBook = await new BookClient (_httpClient).GetBookAsync(id);
-            CurrentBook = currentBook;
+            CurrentBook = currentBook; 
 
         }
     }

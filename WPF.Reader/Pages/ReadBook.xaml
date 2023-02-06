@@ -21,7 +21,7 @@
         <!-- On aimerais bien avoir le tire du livre en entête -->
 
         <!-- Ainsi que le contenu du livre ! -->
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" >
             <TextBlock Text="Title :"></TextBlock>
             <TextBlock Text="{Binding CurrentBook.Name}" />
 

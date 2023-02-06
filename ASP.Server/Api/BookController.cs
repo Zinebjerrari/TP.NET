@@ -34,7 +34,7 @@ namespace ASP.Server.Api
         // - GetBook
         //   - Entrée: Id du livre
         //   - Sortie: Object livre entier
-        [HttpGet("GetBook/{id}")]
+        [HttpGet("GetBook/{Id}")] 
         public ActionResult<Book> GetBook(int Id)
         {
             var test = libraryDbContext.Books.Include(g => g.Genres).Where(g => g.Id == Id).FirstOrDefault();
