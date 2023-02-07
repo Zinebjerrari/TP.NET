@@ -10,28 +10,35 @@
       d:DesignHeight="450" d:DesignWidth="800"
       d:DataContext="{d:DesignInstance Type=vm:InDesignDetailsBook, d:IsDesignTimeCreatable=True}"
       Title="DetailsBook">
-
-    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   >
-        <StackPanel Orientation="Vertical" TextBlock.TextAlignment="Center">
-            <TextBlock Text="Id :"></TextBlock>
-            <TextBlock Text="{Binding CurrentBook.Id}" />
-            <TextBlock Text="Title :"></TextBlock>
-            <TextBlock Text="{Binding CurrentBook.Name}" />
-            <TextBlock Text="Author :"></TextBlock>
-            <TextBlock Text="{Binding CurrentBook.Author}" />
-            <TextBlock Text="Prix :"></TextBlock>
-            <TextBlock Text="{Binding CurrentBook.Price}" />
-            <TextBlock Text="Genre(s) :"></TextBlock>
-            <ItemsControl ItemsSource="{Binding CurrentBook.Genres}" Margin="0,0,0,350">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Name}"/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-
-            <Button Command="{Binding ReadCommand}" CommandParameter="{Binding CurrentBook}" Content="Lire le livre " Grid.Row="1" Background="Red"  />
-
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Stretch"   >
+        <StackPanel Orientation="Vertical" TextBlock.TextAlignment="Justify"  >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Id :" FontSize="15" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="{Binding CurrentBook.Id}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Title :" FontSize="15" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="{Binding CurrentBook.Name}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Author :" FontSize="15" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="{Binding CurrentBook.Author}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Prix :" FontSize="15" FontWeight="Bold"></TextBlock>
+                <TextBlock Text="{Binding CurrentBook.Price}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Genre(s) :" FontSize="15" FontWeight="Bold"></TextBlock>
+                <ItemsControl ItemsSource="{Binding CurrentBook.Genres}" Margin="0,0,0,150">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+            <Button Command="{Binding ReadCommand}" CommandParameter="{Binding CurrentBook}" Content="Lire le livre " Background="Red"  Height="50" Width="100"/>
         </StackPanel>
         <!-- il faut afficher les information du livre: Nom, Auteur, Prix, Genres-->
         <!-- Mais pas le contenu ! -->
