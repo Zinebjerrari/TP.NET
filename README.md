@@ -38,7 +38,6 @@ On peut visualiser la modification apportée à ce genre :
 ![image](https://user-images.githubusercontent.com/99188272/216850135-b331b010-3ce2-477a-a74f-caa23ac9f141.png)
 
 
-# Partie WPF:
  
 
 # But
